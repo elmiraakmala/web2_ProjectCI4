@@ -4,14 +4,17 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ProductModel;
+use CodeIgniter\Session\Session;
 
 class Product extends BaseController
 {
     protected $productData;
+
     public function __construct()
     {
         $this->productData = new ProductModel();
     }
+
 
     public function index()
     {
@@ -21,7 +24,14 @@ class Product extends BaseController
             'products' => $products
         ];
 
+        //echo $this->session->get("username");
         return view('Product/index', $data);
+        // if (isset($_SESSION['username'])) {
+        //     session()->setFlashdata('message', 'Login failed! Please check your username or password!');
+        //     return redirect()->to('/user/index');
+        // } else {
+        //     return false;
+        // }
     }
 
     public function create()

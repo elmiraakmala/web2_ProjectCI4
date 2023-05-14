@@ -145,8 +145,8 @@ class App extends BaseConfig
      *
      * @deprecated use Config\Session::$driver instead.
      */
-    public string $sessionDriver = FileHandler::class;
-
+    //public string $sessionDriver = FileHandler::class;
+    public string $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler';
     /**
      * --------------------------------------------------------------------------
      * Session Cookie Name
@@ -187,8 +187,8 @@ class App extends BaseConfig
      *
      * @deprecated use Config\Session::$savePath instead.
      */
-    public string $sessionSavePath = WRITEPATH . 'session';
-
+    //public string $sessionSavePath = WRITEPATH . 'session';
+    public string $sessionSavePath = 'writable/sessions';
     /**
      * --------------------------------------------------------------------------
      * Session Match IP

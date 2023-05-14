@@ -35,8 +35,13 @@
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="password" name="password">
         </div>
+        <div class="form-group row">
+            <div class="col text-center">
+                <button type="submit" class="btn btn-primary">Submit</button> <br>
+                <a type="button" class="btn btn-success mt-3" href="/user/register">Register</a>
+            </div>
+        </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
     <!-- Optional JavaScript -->
