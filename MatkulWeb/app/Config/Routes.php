@@ -43,6 +43,8 @@ $routes->get('/user/logout', 'Users::logout');
 $routes->get('/user/register', 'Users::register');
 $routes->post('/user/save', 'Users::save');
 $routes->get('/about', 'Page::about');
+
+$routes->get('/admin/index', 'AdminController::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

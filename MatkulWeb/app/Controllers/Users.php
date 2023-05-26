@@ -37,7 +37,7 @@ class Users extends BaseController
 
             $this->session->set($newdata); // setting session data
 
-            return redirect()->to('/product/index');
+            return redirect()->to('/admin/index');
         } else {
             session()->setFlashdata('message', 'Login failed! Please check your username or password!');
             return redirect()->to('/user/index');

@@ -1,64 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Login</title>
 
-    <title>Matkul web 2</title>
+    <!-- Custom fonts for this template-->
+    <link href="<?= base_url('sbadmin2/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
-
+    <!-- Custom styles for this template-->
+    <link href="<?= base_url('sbadmin2/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="<?= base_url('sbadmin2/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
 
 </head>
 
-<body>
-    <?php if (session()->getFlashdata('message')) : ?>
-        <div class="alert alert-danger" role="alert">
-            <?= session()->getFlashdata('message'); ?>
-        </div>
-    <?php endif; ?>
-    <h1 class="mt-5">
-        Form Login
-    </h1>
-    <form action="/user/login" method="post">
-        <?= csrf_field(); ?>
-        <div class="form-group">
-            <label>Username</label>
-            <input type="text" class="form-control" id="username" name="username">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password" name="password">
-        </div>
-        <div class="form-group row">
-            <div class="col text-center">
-                <button type="submit" class="btn btn-primary">Submit</button> <br>
-                <a type="button" class="btn btn-success mt-3" href="/user/register">Register</a>
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    </div>
+                                    <?php if (session()->getFlashdata('message')) : ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?= session()->getFlashdata('message'); ?>
+                                    </div>
+                                    <?php endif; ?>
+                                    <form action="/user/login" method="post" class="user">
+                                        <?= csrf_field(); ?>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user" id="username"
+                                                name="username" aria-describedby="username"
+                                                placeholder="Enter Username...">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" id="password"
+                                                name="password" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Remember
+                                                    Me</label>
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">Submit</button>
+                                        <br>
+                                        <hr>
+                                        <a href="/user/register" class="btn btn-google btn-user btn-block">
+                                            <i class="fas fa-user"></i> Create An Account
+                                        </a>
+
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
         </div>
 
-    </form>
+    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?= base_url('sbadmin2/vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="<?= base_url('sbadmin2/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="<?= base_url('sbadmin2/js/sb-admin-2.min.js') ?>"></script>
+
+
+
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#TableStyle').DataTable();
-    });
-</script>
 
 </html>
