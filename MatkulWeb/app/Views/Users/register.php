@@ -1,32 +1,47 @@
-<?= $this->extend('templateWithoutNav'); ?>
+<?= $this->extend('Users/LayoutAccount'); ?>
 
 <?= $this->section('MyContent'); ?>
 
-<h1 class="mt-5">
-    Register
-</h1>
-<form class="mt-5" action="/user/save" method="post">
-    <?= csrf_field(); ?>
+<div class="card h-lg-auto w-50 mx-auto mt-5">
+    <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
 
-    <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-2 col-form-label"> Username</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="username" name="username" autocomplete="off" required>
+            <div class="col-lg-12">
+                <div class="p-5">
+                    <div class="text-center">
+                        <h1 class="h4 text-gray-900 mb-4">Create an Account</h1>
+                    </div>
+                    <form class="user" action="/user/save" method="post">
+                        <?= csrf_field(); ?>
+
+
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-user" id="username" name="username"
+                                placeholder="Username" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control form-control-user" id="password" name="password"
+                                placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                            Register Account
+                        </button>
+
+                    </form>
+                    <hr>
+                    <div class="text-center">
+                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                    </div>
+                    <div class="text-center">
+                        <a class="small" href="/user/index">Already have an account? Login!</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
 
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-            <input type="password" class="form-control" id="password" name="password" autocomplete="off" required>
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col text-center">
-            <button class="btn btn-primary" type="submit">Save</button>
-        </div>
-    </div>
-</form>
 
 <?= $this->endSection(); ?>

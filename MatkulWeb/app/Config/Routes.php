@@ -45,6 +45,8 @@ $routes->post('/user/save', 'Users::save');
 $routes->get('/about', 'Page::about');
 
 $routes->get('/admin/index', 'AdminController::index');
+$routes->get('/admin/about', 'AdminController::about');
+$routes->get('/admin/contact', 'AdminController::contact');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

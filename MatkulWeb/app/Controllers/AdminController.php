@@ -10,4 +10,13 @@ class AdminController extends BaseController
     {
         return view('Admin/index');
     }
+
+    public function about()
+    {
+        return view('Admin/about');
+    }
+    public function contact()
+    {
+        return view('Admin/contact');
+    }
 }
