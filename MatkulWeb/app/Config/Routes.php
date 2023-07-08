@@ -37,6 +37,13 @@ $routes->get('/product/delete/(:num)', 'Product::delete/$1');
 $routes->get('/product/edit/(:num)', 'Product::edit/$1');
 $routes->post('/product/update', 'Product::update');
 
+$routes->get('/BrowseProduk/index', 'BrowseProduk::index');
+$routes->get('/BrowseProduk/create', 'BrowseProduk::create');
+$routes->post('/BrowseProduk/save', 'BrowseProduk::save');
+$routes->get('/BrowseProduk/delete/(:num)', 'BrowseProduk::delete/$1');
+$routes->get('/BrowseProduk/edit/(:num)', 'BrowseProduk::edit/$1');
+$routes->post('/BrowseProduk/update', 'BrowseProduk::update');
+
 $routes->get('/user/index', 'Users::index');
 $routes->post('/user/login', 'Users::login');
 $routes->get('/user/logout', 'Users::logout');
